@@ -22,7 +22,7 @@ export default function Home() {
           </h1>
           
           </div>
-            
+            <Grid />
           <div>   
         </div>
       </main>
