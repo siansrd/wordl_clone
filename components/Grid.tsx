@@ -5,7 +5,7 @@ const Grid = () => {
 
   const GUESSES = 6
 
-  const rows = [...Array(GUESSES)].map(() => <Row/>)
+  const rows = [...Array(GUESSES)].map((_, i) => <Row key={i}/>)
 
   return <div className={styles.grid}>
     {rows}
