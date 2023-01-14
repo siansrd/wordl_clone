@@ -1,14 +1,14 @@
 import { Dispatch, SetStateAction, SyntheticEvent, useState } from "react";
 
 type Props = {
-  checkGuess: (guess: string) => boolean
+  submitGuess: (guess: string) => void
 }
 
-const Guess = ({checkGuess} : Props) => {
+const Guess = ({submitGuess} : Props) => {
   
   const handleSubmitGuess = (e: SyntheticEvent) => {
     e.preventDefault();
-    checkGuess(e.target.guess.value || "")
+    submitGuess(guess)
     setGuess("")
   }
 
