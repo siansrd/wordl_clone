@@ -1,20 +1,27 @@
-import { Dispatch, SetStateAction, SyntheticEvent } from "react";
+import { Dispatch, SetStateAction, SyntheticEvent, useState } from "react";
 
 type Props = {
-  setGuess: Dispatch<SetStateAction<string>>
+  checkGuess: (guess: string) => boolean
 }
 
-const Guess = ({setGuess} : Props) => {
+const Guess = ({checkGuess} : Props) => {
   
   const handleSubmitGuess = (e: SyntheticEvent) => {
     e.preventDefault();
-    setGuess(e.target.guess.value || "")
+    checkGuess(e.target.guess.value || "")
+    setGuess("")
   }
+
+  const [guess, setGuess] = useState<string>("")
 
   return <form onSubmit={e => handleSubmitGuess(e)}>
     <label>
       Guess:
-      <input type="text" name="guess" />
+      <input 
+        type="text" 
+        name="guess" 
+        value={guess} 
+        onChange={e => setGuess(e.target.value)}/>
     </label>
     <input type="submit" value="Guess" />
   </form>

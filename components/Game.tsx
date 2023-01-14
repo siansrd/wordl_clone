@@ -1,14 +1,15 @@
-import { useState } from "react"
+import { ANSWER } from "../game/game_config"
+import { createCheckGuess } from "../game/game_logic"
 import Grid from "./Grid"
 import Guess from "./Guess"
 
 const Game = () => {
 
-  const [guess, setGuess] = useState<string>("")
+  const checkGuess = createCheckGuess(ANSWER)
  
   return <div>
     <Grid/>
-    <Guess setGuess={setGuess}/>
+    <Guess checkGuess={checkGuess}/>
   </div>
 }
 
