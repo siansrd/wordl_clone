@@ -1,16 +1,18 @@
 import { useState } from "react"
 import { ANSWER } from "../game/game_config"
-import { createCheckGuess } from "../game/game_logic"
+import { addGuess, CheckGuess, createCheckGuess } from "../game/game_logic"
 import Grid from "./Grid"
 import Guess from "./Guess"
 
 const Game = () => {
 
-  const [gameWon, setGameWon] = useState(false)
+  const [gameWon, setGameWon] = useState<boolean>(false)
+  const [guesses, setGuesses] = useState<string[]>([])
 
-  const checkGuess = createCheckGuess(ANSWER)
+  const checkGuess: CheckGuess = createCheckGuess(ANSWER)
   
   const submitGuess = (guess: string) => {
+    setGuesses(addGuess(guess, guesses))
     setGameWon(checkGuess(guess))
   }
  

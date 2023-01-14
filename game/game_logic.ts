@@ -1,4 +1,4 @@
-type CheckGuess = (guess: string) => boolean
+export type CheckGuess = (guess: string) => boolean
 type CreateCheckGuess = (answer: string) => CheckGuess
 
 export const createCheckGuess: CreateCheckGuess = (answer: string) => {
@@ -7,4 +7,8 @@ export const createCheckGuess: CreateCheckGuess = (answer: string) => {
   }
 }
 
+export const addGuess = (guess: string, guesses: string[]): string[] => {
+  return [...guesses, guess]
+}
+ 
 
