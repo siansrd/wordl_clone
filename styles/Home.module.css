@@ -4,10 +4,22 @@
 
 .grid {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
   align-items: center;
-  padding: 6rem;
   /* min-height: 100vh; */
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.charBox {
+  border: black solid 1px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin: 0.5rem;
 }
 

@@ -17,7 +17,7 @@ const Game = () => {
   }
  
   return <div>
-    <Grid/>
+    <Grid guesses={guesses}/>
     <Guess submitGuess={submitGuess}/>
     <p>{gameWon ? "correct" : "incorrect"}</p>
   </div>

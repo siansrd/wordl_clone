@@ -1,11 +1,17 @@
 import Row from "./Row"
 import styles from '../styles/Home.module.css'
+import { GUESSES } from "../game/game_config"
 
-const Grid = () => {
+type GridProps = {
+  guesses: string[]
+}
 
-  const GUESSES = 6
+const Grid = ({guesses}: GridProps) => {
 
-  const rows = [...Array(GUESSES)].map((_, i) => <Row key={i}/>)
+  const rows = [...Array(GUESSES)].map((_, i) => {
+    const word: string = guesses[i]
+    return <Row word={word ? word : "     "} key={i} />
+  })
 
   return <div className={styles.grid}>
     {rows}
