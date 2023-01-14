@@ -1,4 +1,4 @@
-import { addGuess, createCheckGuess } from "../game_logic"
+import { addGuess, createCheckGuess, getLetterResult, letterResult } from "../game_logic"
 const checkGuess = createCheckGuess("A")
 
 describe('checkGuess', () => {
@@ -24,8 +24,22 @@ describe('createCheckGuess', () => {
 })
 
 
-describe ('addGuess', () => {
+describe('addGuess', () => {
   test('it should add new guess to array of guesses', () => {
     expect(addGuess("B", ["A"])).toEqual(["A", "B"])
+  })
+})
+
+describe('getLetterResult', () => {
+  test('it should return "CORRECT" if letter matches in right place', () => {
+    expect(getLetterResult("A", "AUDIO", 0)).toBe(letterResult.correct)
+  })
+
+  test('it should return "INCORRECT_POSITION if letter matches in wrong place', () => {
+    expect(getLetterResult("A", "AUDIO", 1)).toBe(letterResult.incorrectPosition)
+  })
+
+  test('it should return "INCORRECT" if letter doesnt match', () => {
+    expect(getLetterResult("B", "AUDIO", 0)).toBe(letterResult.incorrect)
   })
 })

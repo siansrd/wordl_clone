@@ -4,13 +4,13 @@ import { GUESSES } from "../game/game_config"
 
 type GridProps = {
   guesses: string[]
+  answer: string
 }
 
-const Grid = ({guesses}: GridProps) => {
-
+const Grid = ({guesses, answer}: GridProps) => {
   const rows = [...Array(GUESSES)].map((_, i) => {
-    const word: string = guesses[i]
-    return <Row word={word ? word : "     "} key={i} />
+    const word = guesses[i]
+    return <Row answer={answer} word={word ? word : "     "} key={i} />
   })
 
   return <div className={styles.grid}>
