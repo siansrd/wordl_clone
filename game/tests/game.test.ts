@@ -6,4 +6,8 @@ describe('checkGuess', () => {
   test('it should return true if guess and answer are the same', () => {
     expect(checkGuess("A")).toEqual(true)
   })
+
+  test('it should return true if guess and answer are the same', () => {
+    expect(checkGuess("B")).toEqual(false)
+  })
 })
