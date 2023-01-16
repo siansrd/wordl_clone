@@ -2,7 +2,7 @@ import { useState } from "react"
 import { ANSWER } from "../game/game_config"
 import { addGuess, CheckGuess, createCheckGuess } from "../game/src/game"
 import Grid from "./Grid"
-import Guess from "./Guess"
+import Guess from "./GuessForm"
 
 const Game = () => {
 
@@ -19,7 +19,7 @@ const Game = () => {
   return <div>
     <Grid guesses={guesses} answer={ANSWER}/>
     <Guess submitGuess={submitGuess}/>
-    <p>{gameWon ? "correct" : "incorrect"}</p>
+    {gameWon && "You won!"}
   </div>
 }
 
