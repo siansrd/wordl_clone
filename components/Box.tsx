@@ -1,4 +1,4 @@
-import { letterResult } from '../game/game_logic'
+import { LetterResult } from '../game/src/game'
 import styles from '../styles/Home.module.css'
 
 type BoxProps = {

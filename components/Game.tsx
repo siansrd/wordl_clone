@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { ANSWER } from "../game/game_config"
-import { addGuess, CheckGuess, createCheckGuess } from "../game/game_logic"
+import { addGuess, CheckGuess, createCheckGuess } from "../game/src/game"
 import Grid from "./Grid"
 import Guess from "./Guess"
 

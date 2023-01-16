@@ -1,5 +1,5 @@
 import { WORD_LENGTH } from "../game/game_config"
-import { getLetterResult, letterResult } from "../game/game_logic"
+import { getLetterResult, LetterResult } from "../game/src/game"
 import styles from "../styles/Home.module.css"
 import Box from "./Box"
 
@@ -13,8 +13,8 @@ const Row = ({word, answer}: RowProps) => {
   const boxes = [...Array(WORD_LENGTH)].map((_, i) => {
     const guessLetter = word[i]
     const guessLetterResult = getLetterResult(guessLetter, answer, i)
-    const backgroundColour =  guessLetterResult === letterResult.correct 
-      ? styles.correctPositionBox : guessLetterResult === letterResult.incorrectPosition 
+    const backgroundColour =  guessLetterResult === LetterResult.correct 
+      ? styles.correctPositionBox : guessLetterResult === LetterResult.incorrectPosition 
       ? styles.incorrectPositionBox : styles.incorrectBox
     return <Box letter={word[i]} key={i} backgroundColour={backgroundColour} />
   })
