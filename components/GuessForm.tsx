@@ -29,6 +29,7 @@ const Guess = ({submitGuess} : Props) => {
     <label>
       Guess:
       <input 
+        maxLength={5}
         type="text" 
         name="guess" 
         value={guess} 
