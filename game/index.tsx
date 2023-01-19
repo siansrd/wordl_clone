@@ -1,5 +1,3 @@
-import { ANSWER } from "./game_config"
+import { ANSWER } from './game_config'
 
-export const checkGuess = (ANSWER)
-
-
+export const checkGuess = ANSWER

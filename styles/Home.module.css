@@ -24,7 +24,7 @@
 }
 
 .correctPositionBox {
- background-color: darkgreen;
+  background-color: darkgreen;
 }
 
 .incorrectPositionBox {
@@ -34,4 +34,3 @@
 .incorrectBox {
   background-color: lightgrey;
 }
-

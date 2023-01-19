@@ -8,6 +8,6 @@ type BoxProps = {
 
 const Box = ({ letter, backgroundColour }: BoxProps) => {
   return <div className={`${styles.charBox} ${backgroundColour}`}>{letter}</div>
-} 
+}
 
 export default Box

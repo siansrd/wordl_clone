@@ -1,10 +1,9 @@
-import { createCheckWordLength } from "../src/form_validation"
+import { createCheckWordLength } from '../src/form_validation'
 
 const wordLength = 5
 const checkWordLength = createCheckWordLength(wordLength)
 
 describe('form validation', () => {
-
   describe('checkWordLenth', () => {
     it('should return true if word matches specified length', () => {
       expect(checkWordLength('hello')).toBe(true)
@@ -24,5 +23,4 @@ describe('form validation', () => {
       expect(createCheckWordLength(wordLength)('hello')).toBe(true)
     })
   })
-
 })
