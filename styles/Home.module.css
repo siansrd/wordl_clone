@@ -1,3 +1,11 @@
+.gameContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .title {
   text-decoration: underline;
 }
@@ -5,9 +13,6 @@
 .grid {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* align-items: center; */
-  /* min-height: 100vh; */
 }
 
 .row {
@@ -33,4 +38,8 @@
 
 .incorrectBox {
   background-color: lightgrey;
+}
+
+.formContainer {
+  margin: 30px 0;
 }

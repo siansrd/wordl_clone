@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useState } from "react"
 import { WORD_LENGTH } from "../game/game_config"
 import { createCheckWordLength } from "../game/src/form_validation"
+import styles from "../styles/Home.module.css"
 
 type Props = {
   submitGuess: (guess: string) => void
@@ -25,22 +26,24 @@ const Guess = ({ submitGuess }: Props) => {
   const [guess, setGuess] = useState<string>("")
 
   return (
-    <form onSubmit={(e) => handleSubmitGuess(e)}>
-      <label>
-        Guess:
-        <input
-          maxLength={5}
-          type="text"
-          name="guess"
-          value={guess}
-          onChange={(e) =>
-            setGuess(e.target.value.replace(/[^a-z]/gi, "").toUpperCase())
-          }
-        />
-      </label>
-      <input type="submit" value="Guess" />
-      {error}
-    </form>
+    <div className={styles.formContainer}>
+      <form onSubmit={(e) => handleSubmitGuess(e)}>
+        <label>
+          Guess:
+          <input
+            maxLength={5}
+            type="text"
+            name="guess"
+            value={guess}
+            onChange={(e) =>
+              setGuess(e.target.value.replace(/[^a-z]/gi, "").toUpperCase())
+            }
+          />
+        </label>
+        <input type="submit" value="Guess" />
+        {error}
+      </form>
+    </div>
   )
 }
 

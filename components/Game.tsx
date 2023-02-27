@@ -1,8 +1,9 @@
-import { useState } from 'react'
-import { ANSWER } from '../game/game_config'
-import { addGuess, CheckGuess, createCheckGuess } from '../game/src/game'
-import Grid from './Grid'
-import Guess from './GuessForm'
+import { useState } from "react"
+import { ANSWER } from "../game/game_config"
+import { addGuess, CheckGuess, createCheckGuess } from "../game/src/game"
+import styles from "../styles/Home.module.css"
+import Grid from "./Grid"
+import Guess from "./GuessForm"
 
 const Game = () => {
   const [gameWon, setGameWon] = useState<boolean>(false)
@@ -16,13 +17,12 @@ const Game = () => {
   }
 
   return (
-    <div>
-      <Grid
-        guesses={guesses}
-        answer={ANSWER}
-      />
+    <div className={styles.gameContainer}>
+      <h1 className={styles.title}>Wordle</h1>
+
+      <Grid guesses={guesses} answer={ANSWER} />
       <Guess submitGuess={submitGuess} />
-      {gameWon && 'You won!'}
+      {gameWon && "You won!"}
     </div>
   )
 }
