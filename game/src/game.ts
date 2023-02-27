@@ -2,9 +2,9 @@ export type CheckGuess = (guess: string) => boolean
 type CreateCheckGuess = (answer: string) => CheckGuess
 
 export enum LetterResult {
-  correct = 'CORRECT',
-  incorrectPosition = 'INCORRECT_POSITION',
-  incorrect = 'INCORRECT',
+  correct = "CORRECT",
+  incorrectPosition = "INCORRECT_POSITION",
+  incorrect = "INCORRECT",
 }
 
 export const createCheckGuess: CreateCheckGuess = (answer): CheckGuess => {

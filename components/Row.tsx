@@ -10,17 +10,14 @@ type RowProps = {
 
 const Row = ({ word, answer }: RowProps) => {
   const boxes = [...Array(WORD_LENGTH)].map((_, i) => {
-    if (!word) return <Box key={i} backgroundColour={"white"} />
+    if (!word) return <Box key={i} />
 
     const guessLetter = word[i]
     const guessLetterResult = getLetterResult(guessLetter, answer, i)
-    const backgroundColour =
-      guessLetterResult === LetterResult.correct
-        ? styles.correctPositionBox
-        : guessLetterResult === LetterResult.incorrectPosition
-        ? styles.incorrectPositionBox
-        : styles.incorrectBox
-    return <Box letter={word[i]} key={i} backgroundColour={backgroundColour} />
+
+    return (
+      <Box letter={word[i]} key={i} guessLetterResult={guessLetterResult} />
+    )
   })
 
   return <div className={styles.row}>{boxes}</div>

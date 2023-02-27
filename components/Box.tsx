@@ -3,10 +3,19 @@ import styles from "../styles/Home.module.css"
 
 type BoxProps = {
   letter?: string
-  backgroundColour: string
+  guessLetterResult?: LetterResult
 }
 
-const Box = ({ letter, backgroundColour }: BoxProps) => {
+const Box = ({ letter, guessLetterResult }: BoxProps) => {
+  if (!letter) return <div className={`${styles.charBox} ${"white"}`}></div>
+
+  const backgroundColour =
+    guessLetterResult === LetterResult.correct
+      ? styles.correctPositionBox
+      : guessLetterResult === LetterResult.incorrectPosition
+      ? styles.incorrectPositionBox
+      : styles.incorrectBox
+
   return (
     <div className={`${styles.charBox} ${backgroundColour}`}>
       {letter && letter.toUpperCase()}
