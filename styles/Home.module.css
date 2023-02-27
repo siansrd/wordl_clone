@@ -24,11 +24,11 @@
 }
 
 .correctPositionBox {
-  background-color: darkgreen;
+  background-color: rgb(87, 195, 87);
 }
 
 .incorrectPositionBox {
-  background-color: darkorange;
+  background-color: rgb(255, 188, 107);
 }
 
 .incorrectBox {
