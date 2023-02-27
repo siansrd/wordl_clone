@@ -1,5 +1,5 @@
-import { LetterResult } from '../game/src/game'
-import styles from '../styles/Home.module.css'
+import { LetterResult } from "../game/src/game"
+import styles from "../styles/Home.module.css"
 
 type BoxProps = {
   letter: string
@@ -7,7 +7,11 @@ type BoxProps = {
 }
 
 const Box = ({ letter, backgroundColour }: BoxProps) => {
-  return <div className={`${styles.charBox} ${backgroundColour}`}>{letter}</div>
+  return (
+    <div className={`${styles.charBox} ${backgroundColour}`}>
+      {letter.toUpperCase()}
+    </div>
+  )
 }
 
 export default Box

@@ -1,6 +1,6 @@
-import React, { SyntheticEvent, useState } from 'react'
-import { WORD_LENGTH } from '../game/game_config'
-import { createCheckWordLength } from '../game/src/form_validation'
+import React, { SyntheticEvent, useState } from "react"
+import { WORD_LENGTH } from "../game/game_config"
+import { createCheckWordLength } from "../game/src/form_validation"
 
 type Props = {
   submitGuess: (guess: string) => void
@@ -17,12 +17,12 @@ const Guess = ({ submitGuess }: Props) => {
       setError(<p>needs to be 5 letters</p>)
     } else {
       setError(<></>)
-      submitGuess(guess)
-      setGuess('')
+      submitGuess(guess.toLowerCase())
+      setGuess("")
     }
   }
 
-  const [guess, setGuess] = useState<string>('')
+  const [guess, setGuess] = useState<string>("")
 
   return (
     <form onSubmit={(e) => handleSubmitGuess(e)}>
@@ -30,16 +30,15 @@ const Guess = ({ submitGuess }: Props) => {
         Guess:
         <input
           maxLength={5}
-          type='text'
-          name='guess'
+          type="text"
+          name="guess"
           value={guess}
-          onChange={(e) => setGuess(e.target.value)}
+          onChange={(e) =>
+            setGuess(e.target.value.replace(/[^a-z]/gi, "").toUpperCase())
+          }
         />
       </label>
-      <input
-        type='submit'
-        value='Guess'
-      />
+      <input type="submit" value="Guess" />
       {error}
     </form>
   )
